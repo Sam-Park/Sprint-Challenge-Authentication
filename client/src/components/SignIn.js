@@ -27,7 +27,7 @@ class SignIn extends Component {
         })
         .then(res => {
             console.log("res", res.status);
-            if (res.status === 200) {
+            if (res.status === 201) {
                 localStorage.setItem("Authorization", res.data.token)
             }
             console.log('login successful', res);

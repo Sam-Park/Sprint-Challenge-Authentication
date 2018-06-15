@@ -12,8 +12,8 @@ class Jokes extends Component {
 
     getSession = () => {
         const config = {
-                    req: {
-                        "Authorization": localStorage.authorization
+                    headers: {
+                        "Authorization": localStorage.Authorization
                     }
         }
         axios
