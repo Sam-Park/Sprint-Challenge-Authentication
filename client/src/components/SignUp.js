@@ -52,7 +52,7 @@ class SignUp extends Component {
                     </Input>
                     <Input
                      placeholder="password"
-                     type="text"
+                     type="password"
                      onChange={this.handleUserPass}
                      value={this.state.password}>
                     </Input>

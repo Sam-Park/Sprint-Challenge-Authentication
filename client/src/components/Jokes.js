@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Card,  CardColumns, Container } from "reactstrap";
+import { Card,  CardColumns, Container, CardTitle } from "reactstrap";
 
 class Jokes extends Component {
     constructor(props) {
@@ -37,9 +37,14 @@ class Jokes extends Component {
                     <CardColumns>
                        {this.state.jokes.map(joke => {
                           return (
-                          <Card>
+                          <Card key={joke.id}>
+                              <CardTitle>
                                {joke.setup}
+                                </CardTitle>
+                                <br />
                                {joke.punchline}
+                               <span />
+                               <br />
                                </Card>
                         )})}
                        

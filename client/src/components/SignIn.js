@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom'
 import { Input, InputGroup, Button, Form } from 'reactstrap';
 
 class SignIn extends Component {
@@ -8,6 +9,7 @@ class SignIn extends Component {
         this.state = { 
             username: "",
             password: "",
+            redirect: false,
          }
     }
 
@@ -29,6 +31,7 @@ class SignIn extends Component {
             console.log("res", res.status);
             if (res.status === 201) {
                 localStorage.setItem("Authorization", res.data.token)
+                this.setState({ redirect: true })
             }
             console.log('login successful', res);
         })
@@ -39,6 +42,10 @@ class SignIn extends Component {
     };
 
     render() { 
+        const redirect = this.state.redirect
+        if (redirect) {
+          return <Redirect to="/jokes" />
+        }
         return ( 
             <div>
                 <Form onSubmit={this.logInUser}>
@@ -52,7 +59,7 @@ class SignIn extends Component {
                     </Input>
                     <Input
                      placeholder="password"
-                     type="text"
+                     type="password"
                      onChange={this.handleUserPass}
                      value={this.state.password}>
                     </Input>
