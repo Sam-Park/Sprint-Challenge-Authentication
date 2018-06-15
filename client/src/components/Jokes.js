@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Card,  CardColumns, Container, CardTitle } from "reactstrap";
+import NavBar from './NavBar';
 
 class Jokes extends Component {
     constructor(props) {
@@ -33,6 +34,7 @@ class Jokes extends Component {
     render() { 
         return (  
             <div>
+            <NavBar />
                 <Container>
                     <CardColumns>
                        {this.state.jokes.map(joke => {

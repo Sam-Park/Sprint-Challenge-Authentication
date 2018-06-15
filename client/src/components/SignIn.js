@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom'
 import { Input, InputGroup, Button, Form } from 'reactstrap';
+import NavBar from './NavBar';
 
 class SignIn extends Component {
     constructor(props) {
@@ -48,6 +49,8 @@ class SignIn extends Component {
         }
         return ( 
             <div>
+                <NavBar />
+                <h1>Sign In</h1>
                 <Form onSubmit={this.logInUser}>
                     <InputGroup>
                     <Button type="submit">Submit</Button>
